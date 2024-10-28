@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""This module return dictionary keys for delection of pagination."""
+"""This module returns dictionary keys for deletion-resilient pagination."""
 
 import csv
 from typing import List, Dict, Any
@@ -20,8 +20,7 @@ class Server:
             with open(self.DATA_FILE) as f:
                 reader = csv.reader(f)
                 dataset = [row for row in reader]
-            self.__dataset = dataset[1:]  # Skip header
-
+            self.__dataset = dataset[1:]
         return self.__dataset
 
     def indexed_dataset(self) -> Dict[int, List]:
@@ -32,7 +31,7 @@ class Server:
                 len(dataset))}
         return self.__indexed_dataset
 
-    def get_hyper_index(self, index: int = 0, page_size: int = 10
+    def get_hyper_index(self, index: int = None, page_size: int = 10
                         ) -> Dict[str, Any]:
         """
         Returns a dictionary containing:
@@ -41,8 +40,7 @@ class Server:
         - page_size: the current page size.
         - data: the actual data for the page.
         """
-        assert 0 <= index < len(self.indexed_dataset()), "Index out of range"
-
+        assert 0 <= index < len(self.indexed_dataset())
 
         indexed_data = self.indexed_dataset()
         data = []
@@ -61,4 +59,4 @@ class Server:
             "data": data,
             "page_size": len(data),
             "next_index": next_index
-        }
+            }
