@@ -34,7 +34,7 @@ class Server:
     def get_hyper_index(self, index: int = None, page_size: int = 10
                         ) -> Dict[str, Any]:
         """
-        Returns a dictionary containing:
+        Returns a dictionary containing these key-value pairs:
         - index: the current start index of the return page.
         - next_index: the index for the next page.
         - page_size: the current page size.
