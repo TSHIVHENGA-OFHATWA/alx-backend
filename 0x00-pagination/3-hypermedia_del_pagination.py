@@ -41,7 +41,8 @@ class Server:
         - page_size: the current page size.
         - data: the actual data for the page.
         """
-        assert 0 <= index < len(self.indexed_dataset())
+        assert 0 <= index < len(self.indexed_dataset()), "Index out of range"
+
 
         indexed_data = self.indexed_dataset()
         data = []
