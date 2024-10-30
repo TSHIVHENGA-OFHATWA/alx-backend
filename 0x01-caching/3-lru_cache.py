@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""This module create a LRU Cache.
+"""This module create a Least Recently Used Cache.
 """
 from base_caching import BaseCaching
 

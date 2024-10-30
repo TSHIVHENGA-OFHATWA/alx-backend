@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""This module create a LIFOCache.
+"""This module create a Last In First Out Cache.
 """
 from base_caching import BaseCaching
 
