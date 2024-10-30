@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-#!/usr/bin/env python3
 """This module create a FIFOCache.
 """
 from base_caching import BaseCaching
